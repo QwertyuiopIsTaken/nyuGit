@@ -15,7 +15,7 @@ public class LeapYear {
 				// It is a leap year
 				System.out.print(year + " ");
 				counter++;
-				if (counter % 10 == 0) {
+				if (counter % 10 == 0) { // skips a line after displaying 10 years
 					System.out.println();
 				}
 			}
