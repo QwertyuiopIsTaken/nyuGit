@@ -10,7 +10,7 @@ import java.util.Scanner; // used to read inputs
 public class TriangleArea {
 	public static void main (String[] args) {
 		// declarations
-		Scanner numScam = new Scanner(System.in);
+		Scanner numScan = new Scanner(System.in);
 		double s1, s2, s3;
 
 		// input
@@ -28,13 +28,14 @@ public class TriangleArea {
 
 		// output
 		if (isValid(s1, s2, s3)) {
-			System.out.println("The area of the triangle is: " + area)
+			System.out.println("The area of the triangle is: " + area(s1, s2, s3));
 		} else {
 			System.out.println("The triangle is invalid.");
 		}
 	}
 
 	public static boolean isValid(double side1, double side2, double side3) {
+		// the sum of two sides have to be greater than the third side
 		if (side1 + side2 <= side3) {
 			return false;
 		}
@@ -48,6 +49,8 @@ public class TriangleArea {
 	}
 
 	public static double area(double side1, double side2, double side3) {
+		// Heron's formula
+		double s = (side1 + side2 + side3) / 2;
 		return Math.sqrt( s*(s - side1)*(s - side2)*(s - side3) );
 	}
 
